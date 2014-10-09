@@ -24,4 +24,12 @@
     -->
     <integer name="config_fingerprintSensorLocation">0</integer>
 
+<<<<<<< HEAD:res/values/colt_config.xml
 </resources>
+=======
+    <!-- Changelog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_summary">Since the last update</string>
+    <string name="changelog_error">Unable to load changelog</string>
+</resources>
+>>>>>>> b9255864f88... Settings: Changelog:res/values/nitrogen_strings.xml

@@ -63,4 +63,6 @@
     <!-- Colt Enigma -->
     <string name="colt_settings_dash_title">ColtEnigma</string>
     <string name="colt_settings_summary">ColtOS features hub !!</string>
+
+    <string name="global_actions_title">Power menu</string>
 </resources>

@@ -46,4 +46,7 @@
     <string name="selinux_status_permissive">Permissive</string> 
     <string name="selinux_status_enforcing">Enforcing</string>
 
+    <!-- Colt Enigma -->
+    <string name="colt_settings_dash_title">ColtEnigma</string>
+    <string name="colt_settings_summary">ColtOS features hub !!</string>
 </resources>

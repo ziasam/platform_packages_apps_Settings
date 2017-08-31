@@ -52,4 +52,7 @@
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
 
+    <!-- Colt Enigma -->
+    <string name="colt_settings_dash_title">ColtEnigma</string>
+    <string name="colt_settings_summary">ColtOS features hub !!</string>
 </resources>

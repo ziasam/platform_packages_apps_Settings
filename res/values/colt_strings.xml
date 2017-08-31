@@ -70,4 +70,8 @@
 
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Screenshot sound</string>
+
+    <!-- Colt Enigma -->
+    <string name="colt_settings_dash_title">ColtEnigma</string>
+    <string name="colt_settings_summary">ColtOS features hub !!</string>
 </resources>

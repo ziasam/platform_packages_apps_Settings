@@ -26,6 +26,9 @@
     <string name="security_settings_fingerprint_sensor_location_left">left side</string>
     <string name="security_settings_fingerprint_sensor_location_right">right side</string>
 
+    <!-- About phone screen, Device -->
+    <string name="about_device_name">Device</string>
+
     <!-- About phone screen, Colt version -->
     <string name="colt_version">ColtOS version</string>
     <string name="colt_version_default">Unknown</string>

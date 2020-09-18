@@ -61,4 +61,8 @@
     <string name="double_tap_sleep_gesture_title">Double tap to sleep on statusbar</string>
     <string name="double_tap_sleep_gesture_summary">Double tap on the status bar to put the device to sleep</string>
 
+    <!-- QS Tint -->
+    <string name="qs_bg_use_new_tint">New tint style</string>
+    <string name="qs_bg_use_new_tint_summary">Enable the new QS tint style (Requires reboot)</string>
+
 </resources>

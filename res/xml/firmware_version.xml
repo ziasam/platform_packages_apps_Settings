@@ -21,20 +21,20 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- Android version
+    <!-- Colt Logo -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="colt_header_about"
+        android:layout="@layout/colt_header_about"
+        android:selectable="false"/>
+
+    <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
         android:title="@string/firmware_version"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
         settings:searchable="false"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/> -->
-
-     <!-- Colt Logo -->
-    <com.android.settingslib.widget.LayoutPreference
-        android:key="colt_header_about"
-        android:layout="@layout/colt_header_about"
-        android:selectable="false"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
     <!-- Colt version -->
     <Preference

@@ -50,9 +50,6 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settingslib.graph.ThemedBatteryDrawable;
 
-import java.util.List;
-import java.util.Random;
-
 public class BatteryMeterView extends CardView {
 
 	@VisibleForTesting
@@ -400,7 +397,7 @@ public class BatteryMeterView extends CardView {
         protected static final int LARGE = 1;
         protected static final int MIDDLE = 2;
         protected static final int LITTLE = 3;
-        private int mAboveWaveColor = getRandomColor();
+        private int mAboveWaveColor = Utils.getColorAttrDefaultColor(this.getContext(), android.R.attr.colorAccent);
         private int mProgress;
         private int mWaveHeight = 0;
         private int mWaveMultiple = 3;
@@ -423,11 +420,6 @@ public class BatteryMeterView extends CardView {
             addView(mSolid);
             setProgress(mProgress);
         }
-		
-	public int getRandomColor(){
-        Random rnd = new Random();
-           return Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-        }
 
 		public void setBatteryPowerSave(boolean powerSave) {
 			if (powerSave) {
@@ -435,7 +427,7 @@ public class BatteryMeterView extends CardView {
 				mWave.setAboveWaveColor(mAboveWaveColor);
 				mWave.setBlowWaveColor(mAboveWaveColor);
 			} else {
-				mAboveWaveColor = getRandomColor();
+				mAboveWaveColor = Utils.getColorAttrDefaultColor(this.getContext(), android.R.attr.colorAccent);
 				mWave.setAboveWaveColor(mAboveWaveColor);
 				mWave.setBlowWaveColor(mAboveWaveColor);
 			}
@@ -447,7 +439,7 @@ public class BatteryMeterView extends CardView {
 				mWave.setAboveWaveColor(mAboveWaveColor);
 				mWave.setBlowWaveColor(mAboveWaveColor);
 			} else {
-				mAboveWaveColor = getRandomColor();
+				mAboveWaveColor = Utils.getColorAttrDefaultColor(this.getContext(), android.R.attr.colorAccent);
 				mWave.setAboveWaveColor(mAboveWaveColor);
 				mWave.setBlowWaveColor(mAboveWaveColor);
 			}

@@ -46,4 +46,7 @@
     <string name="selinux_status_permissive">Permissive</string> 
     <string name="selinux_status_enforcing">Enforcing</string>
 
+    <!-- Phone Specs -->
+    <string name="specs_title">Phone Specifications</string>
+
 </resources>

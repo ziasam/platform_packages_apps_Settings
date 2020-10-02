@@ -16,97 +16,91 @@
 
 package com.colt.settings;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.viewpager.widget.ViewPager;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.ListPreference;
+import androidx.preference.SwitchPreference;
+import androidx.preference.Preference;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager.widget.PagerAdapter;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Menu;
+import android.view.MenuInflater;
+
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.nano.MetricsProto;
 
+import com.colt.settings.customtab.IconTitleIndicator;
+import com.colt.settings.customtab.Indicatorable;
 import com.colt.settings.tabs.Statusbar;
 import com.colt.settings.tabs.Buttons;
 import com.colt.settings.tabs.Lockscreen;
 import com.colt.settings.tabs.System;
 import com.colt.settings.fragments.AboutTeam;
-import com.colt.settings.bottomnav.BubbleNavigationConstraintView;
-import com.colt.settings.bottomnav.BubbleNavigationChangeListener;
+
+
+import com.android.internal.logging.nano.MetricsProto;
+
+import com.android.settings.SettingsPreferenceFragment;
+import com.colt.settings.utils.Utils;
 
 public class ColtSettings extends SettingsPreferenceFragment {
 
-    private MenuItem mMenuItem;
-    private Context mContext;
+    private static final String TAG = "ColtSettings";
+
+    private IconTitleIndicator mIndicator;
+    private ViewPager mViewpager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        mContext = getActivity();
         View view = inflater.inflate(R.layout.colt, container, false);
 
-        getActivity().setTitle(R.string.coltos_title);
+        mIndicator = (IconTitleIndicator) view.findViewById(R.id.tabs);
+        mViewpager = (ViewPager) view.findViewById(R.id.viewpager);
+        mViewpager.setAdapter(new MyAdapter(getFragmentManager()));
+        init1();
 
-        final BubbleNavigationConstraintView bubbleNavigationConstraintView =  (BubbleNavigationConstraintView) view.findViewById(R.id.bottom_navigation_view_constraint);
-        final ViewPager viewPager = view.findViewById(R.id.viewpager);
-        PagerAdapter mPagerAdapter = new PagerAdapter(getFragmentManager());
-        viewPager.setAdapter(mPagerAdapter);
-
-        bubbleNavigationConstraintView.setNavigationChangeListener(new BubbleNavigationChangeListener() {
-            @Override
-            public void onNavigationChanged(View view, int position) {
-                switch(view.getId()) {
-                    case R.id.statusbar:
-                    case R.id.buttons:
-                    case R.id.lockscreen:
-                    case R.id.system:
-		    case R.id.aboutteam:
-                         viewPager.setCurrentItem(position, true);
-                    break;
-                   }
-               }
-           });
-
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int i, float v, int i1) {
-            }
-
-            @Override
-            public void onPageSelected(int i) {
-                bubbleNavigationConstraintView.setCurrentActiveItem(i);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int i) {
-            }
-        });
-
-        setHasOptionsMenu(true);
-        return view;
+	setHasOptionsMenu(true);
+		return view;
     }
 
-    class PagerAdapter extends FragmentPagerAdapter {
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    }
 
+    private void init1() {
+        mIndicator.setTextSize(11);
+        mIndicator.setTextColorResId(R.color.selector_tab);
+        mIndicator.setIconWidthHeight(50);
+        mIndicator.setItemPaddingTop(15);
+        mIndicator.setViewPager(mViewpager);
+    }
+
+    class MyAdapter extends FragmentPagerAdapter implements Indicatorable.IconPageAdapter {
         String titles[] = getTitles();
         private Fragment frags[] = new Fragment[titles.length];
 
-        PagerAdapter(FragmentManager fm) {
+        public MyAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new Statusbar();
+	    frags[0] = new Statusbar();
             frags[1] = new Buttons();
             frags[2] = new Lockscreen();
             frags[3] = new System();
             frags[4] = new AboutTeam();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
         }
 
         @Override
@@ -119,10 +113,10 @@ public class ColtSettings extends SettingsPreferenceFragment {
             return frags.length;
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
+        public int getIconResId(int position) {
+            return icons[position];
         }
+
     }
 
     private String[] getTitles() {
@@ -133,16 +127,19 @@ public class ColtSettings extends SettingsPreferenceFragment {
 	    getString(R.string.lockscreen_tab),
             getString(R.string.system_tab),
             getString(R.string.about_tab)};
-
         return titleString;
     }
+
+    private int icons[] = {
+	    R.drawable.statusbar_tab,
+            R.drawable.buttons_tab,
+            R.drawable.lockscreen_tab,
+            R.drawable.system_tab,
+            R.drawable.about_tab};
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.COLT;
     }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-    }
 }
+

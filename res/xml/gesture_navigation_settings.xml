@@ -53,6 +53,12 @@
         settings:textStart="@string/smallest_tick_label"
         settings:textEnd="@string/greatest_tick_label"/>
 
+    <com.colt.enigma.preference.SystemSettingSwitchPreference
+        android:key="back_gesture_haptic"
+        android:title="@string/back_gesture_haptic_title"
+        android:summary="@string/back_gesture_haptic_summary"
+        android:defaultValue="false" />
+
     <com.android.settingslib.widget.FooterPreference
         android:key="gesture_navigation_settings_footer"
         android:title="@string/back_sensitivity_dialog_message_cust"

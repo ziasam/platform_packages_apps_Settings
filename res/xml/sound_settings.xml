@@ -89,12 +89,20 @@
         settings:controller="com.android.settings.notification.AlarmVolumePreferenceController"/>
 
     <!-- Link ringtone and notification volumes -->
-    <com.evolution.settings.preference.SecureSettingSwitchPreference
+    <com.colt.enigma.preference.SecureSettingSwitchPreference
         android:key="volume_link_notification"
         android:title="@string/volume_link_notification_title"
         android:defaultValue="true"
         android:order="-133"
         settings:controller="com.android.settings.notification.LinkedVolumesPreferenceController"/>
+
+    <!-- Volume panel to left -->
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="volume_panel_on_left"
+        android:title="@string/volume_panel_on_left_title"
+        android:defaultValue="false"
+        android:order="-132"
+        settings:controller="com.android.settings.sound.VolumePanelOnLeftPreferenceController"/>
 
     <!-- Also vibrate for calls -->
     <Preference

@@ -163,4 +163,12 @@
     <!-- ColtOS maintainer --> 
     <string name="maintainer">ColtOS Device Maintainer</string>
 
+    <!-- colt version page strings -->
+    <string name="colt_version_branding">Colt Enigma</string>
+    <string name="colt_version_device">Device</string>
+    <string name="colt_version_cpu">CPU</string>
+    <string name="colt_version_resolution">Resolution</string>
+    <string name="colt_version_battery">Battery</string>
+    <string name="colt_version_ram">RAM</string>
+    <string name="colt_version_maintainer">Maintainer</string>
 </resources>

@@ -1,0 +1,5 @@
+<resources>
+    <!-- colt version page colors -->
+    <color name="colt_version_border_color">#E6E6E6</color>
+    <color name="colt_version_text_color">#121212</color>
+</resources>

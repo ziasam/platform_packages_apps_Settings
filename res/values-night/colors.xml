@@ -40,5 +40,9 @@
     <color name="palette_list_color_blue">@color/palette_list_dark_mode_color_blue</color>
     <color name="palette_list_color_purple">@color/palette_list_dark_mode_color_purple</color>
     <color name="gestures_setting_background_color">@android:color/black</color>
+
+    <!-- colt version page colors -->
+    <color name="colt_version_border_color">#242424</color>
+    <color name="colt_version_text_color">#FFFFFF</color>
 </resources>
 

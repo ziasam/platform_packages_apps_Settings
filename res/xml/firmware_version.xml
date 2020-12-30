@@ -21,11 +21,14 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- Colt Logo -->
+    <!-- colt Version -->
     <com.android.settingslib.widget.LayoutPreference
-        android:key="colt_header_about"
-        android:layout="@layout/colt_header_about"
-        android:selectable="false"/>
+        android:layout_height="match_parent"
+        android:key="colt_version"
+        android:layout="@layout/colt_version"
+        android:order="-500"
+        android:selectable="false"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.ColtVersionPreferenceController" />
 
     <!-- Android version -->
     <Preference
@@ -35,30 +38,6 @@
         settings:enableCopying="true"
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
-
-    <!-- Colt version -->
-    <Preference
-        android:key="colt_version"
-        android:title="@string/colt_version"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.ColtVersionPreferenceController"/>
-
-    <!-- ColtOS maintainer -->
-    <Preference
-        android:key="maintainer"
-        android:title="@string/maintainer"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.ColtMaintainerPreferenceController"/>
-
-    <!-- Phone Specs -->
-    <Preference
-        android:key="phone_specs"
-        android:title="@string/specs_title"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.SpecsPreferenceController"/>
 
     <!-- Security patch -->
     <Preference

@@ -101,7 +101,6 @@
         settings:enableCopying="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SelinuxStatusPreferenceController"/>
 
-<<<<<<< HEAD
     <!-- Build -->
     <!--Preference
         android:key="os_build_number"

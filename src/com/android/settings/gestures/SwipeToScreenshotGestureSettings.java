@@ -43,7 +43,7 @@ public class SwipeToScreenshotGestureSettings extends DashboardFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EVO;
+        return MetricsEvent.COLT;
     }
 
     @Override

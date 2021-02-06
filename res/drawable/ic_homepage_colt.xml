@@ -17,7 +17,7 @@
      <com.android.settingslib.widget.AdaptiveIconShapeDrawable
             android:width="@dimen/dashboard_tile_image_size"
             android:height="@dimen/dashboard_tile_image_size"
-            android:color="@color/wave_homepage_icon_battery_color" />
+	    android:color="@color/wave_homepage_icon_background" />
      </item>
 
      <item
